@@ -235,9 +235,7 @@ TruthTab *parse_expr(ParseState *ps)
 	return lhs;
 }
 
-/* term -> factor { [AND] factor }
- *      -> factor XOR factor
- */
+/* term -> factor { ([AND] | XOR) factor } */
 TruthTab *parse_term(ParseState *ps)
 {
 	TruthTab *lhs, *rhs;
